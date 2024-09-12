@@ -6,7 +6,10 @@ Module for filtering log data to obfuscate specified fields.
 import re
 from typing import List
 
-def filter_datum(fields: List[str], redaction: str, message: str, separator: str) -> str:
+
+def filter_datum(
+    fields: List[str], redaction: str, message: str, separator: str
+) -> str:
     """
     Returns the log message with specified fields obfuscated.
 
