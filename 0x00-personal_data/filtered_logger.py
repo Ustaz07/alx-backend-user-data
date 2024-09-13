@@ -8,13 +8,13 @@ from typing import List
 
 def filter_datum(fields: List[str], redaction: str, message: str,
                  separator: str) -> str:
-    """Obfuscates sensitive information in the message based on the provided fields.
+    """Obfuscates sensitive information in message based on the provided fields.
 
     Args:
-        fields (List[str]): List of strings representing the fields to be redacted.
-        redaction (str): The string that will replace the sensitive information.
+        fields (List[str]): List of strings representn fields to be redacted.
+        redaction (str): The string that will replace sensitive information.
         message (str): The log message containing sensitive data.
-        separator (str): The character separating the fields in the log message.
+        separator (str): The character separatn the fields in log message.
 
     Returns:
         str: The log message with sensitive information redacted.
@@ -29,7 +29,7 @@ def filter_datum(fields: List[str], redaction: str, message: str,
 
 
 class RedactingFormatter(logging.Formatter):
-    """Redacting Formatter class that obfuscates sensitive fields in log messages."""
+    """Redacting Formatter class that obfuscates sensitive fields in log."""
 
     REDACTION = "***"
     FORMAT = "[HOLBERTON] %(name)s %(levelname)s %(asctime)-15s: %(message)s"
@@ -39,7 +39,7 @@ class RedactingFormatter(logging.Formatter):
         """Initialize the formatter with fields to be redacted.
 
         Args:
-            fields (List[str]): List of fields that should be redacted in log messages.
+            fields (List[str]): List of fields to be redacted in log messages.
         """
         super(RedactingFormatter, self).__init__(self.FORMAT)
         self.fields = fields
